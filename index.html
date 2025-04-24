@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Encryption 101</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+<div id="container">
+<div id="header"><h1><a href="">CMIT220 Final</a></h1></div>
+  <div id="wrapper">
+    <div id="content">
+      <br>
+      <h2>What is Public Key Infrastructure?</h2>
+      <hr>
+      <p>Public Key Infrastructure, or PKI, is a set of tools that are used to facilitate secure, encrypted communications over the internet. Today, PKI is built into all web browsers, is used by web servers, and has a large infrastructure of servers called Certificate Authorities that maintain it. In order to understand PKI and Certificates though, we need to examine Encryption first.</p>
+      <h3>Ciphers & Symmetric Encryption</h3>
+      <p>Encryption! Without it, all the information sent over the internet could be easily intercepted and read by any malicious actor- everything from payment information to your Social Security Number would be entirely compromised. Encryption is the means by which we keep our information private when sent into the vast interweb, ensuring that only intended recipients gain access to it.
+      </p>
+      <p>There are various forms of encryption that can be used to obfuscate information- you probably even know of a few, like the Caesar cipher. Using this cipher, you can encode your information by shifting the letters down the alphabet by a specific number, called a key: For example, the word 'hello' with a key of 7 becomes 'olssv.' But the same key can be used to decode the same cipher, just by reversing the direction.
+      </p>
+      <p><img src="https://www.shutterstock.com/image-vector/encryption-using-symmetric-key-asymmetric-600nw-2002074146.jpg"></p>
+      <p>This is the same in modern symmetric encryption algorithms, and while they use far more complex means of encoding, they can nonetheless be reversed using the same key. This is a challenge for communication over the open ocean of the internet; if your intended recipient doesn't have the key, they won't be able to read your message. And if you send the key over the internet, that'd mean any malicious actor could intercept the key and decrypt your message anyway! Fortunately, brilliant computer scientists have long created a solution to this conundrum.
+      </p>
+      <h3>What is Asymmetric Encryption?</h3>
+      <p>Rather than rely on a single key for encryption and decryption, we instead create two keys that work as a pair. Each key is capable of encrypting messages that only the other key in their pair can decrypt. In order to create security, only one of these keys is handed out to other machines- this is called the <em>public</em> key. Thus, we also end up with a secret, <em>private</em> key.</p>
+      <p><img src="https://www.shutterstock.com/image-vector/encryption-using-symmetric-key-asymmetric-600w-2002074149.jpg"></p>
+      <p>There are a few ways these key pairs are used in online communications. First, when you encrypt a message with your private key, anyone with your public key can read it, but because they have to first decrypt it with <em>your</em> public key, it means that they confirm that it was sent by you- this is called digital signing.</p>
+      <p>On the flipside, when you do the opposite and encrypt a message with another device's public key, only that machine can decrypt it with their private key. Together this means that, if you have another user's public key, you can verify messages sent by them and send encrypted messages in return! On the flipside, if they have <em>your</em> public key, they can do the same: They verify your messages and send them back to you. Congratulations- we've established secure communications between two machines, using four keys in total!</p>
+      <h3>Certificates 101</h3>
+      <p>This method is imperfect, however. We can't always know for sure that the machine we are communicating with is who they say they are. Anyone with a bit of technical knowhow can set up a bogus Microsoft website and ask for your credit card details. As an additional layer of security, in order to connect to modern webservers, a device requires what's known as a certificate.</p>
+      <p>A certificate is a unique digital document that contains information about the identity of the holder, and contains their public key. When two devices communicate securely, they exchange certificates, verifying one another's identities and establishing a secure channel with which they can communicate. There are multiple protocols that use certificate handshakes like this, such as SSH, Email, and HTTPS.</p>
+      <ul><em><small><li>Try clicking on the padlock symbol next to your search bar when you connect to a server. There, you can see that the connection is using HTTPS, and even open the certificate to read it for yourself!</li></small></em></ul>
+      <h3>Certificate Authorities</h3>
+      <p>The final piece of the puzzle comes in the form of servers known as Certificate Authorities, or CAs. The value of a certificate is dependent on the trustworthiness of the issuing server. Most certificates are issued and signed by CAs which are run by large companies like Google or Microsoft. Because these companies are well-regarded, they are trusted third parties for the issuance of certificates.</p>
+      <p>On the opposite end of the trustworthiness spectrum, one can easily install a Self-signed certificate, which is what we will be doing today. A self-signed certificate is not issued by a CA but is instead created by the owner of the entity that will use it. They are easy to make and don't cost money- which is both a benefit and a problem, because it means anyone can create a self-signed certificate that claims to be a certain entity. For this reason, you often won't be able to traverse the internet with HTTPS if your certificate is self-signed!</p>
+      <p>On the other page of this website you'll find a tutorial on how to create and install one of these self-signed certificates.</p>
+    </div>
+  </div>
+  <div id="navigation">
+    <br>
+    <p><strong>Navigation</strong></p>
+    <ul>
+      <li><a href="index.html">What are Certificates?</a></li>
+      <li><a href="tutorial.html">How to install a Self-Signed Cert.</a></li>
+    </ul>
+  </div>
+  <div id="extra">
+    <h3>Sources & Additional Reading</h3>
+    <em><p><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-cs/certification-authority-role">What is the Certification Authority Role Service?</a>
+    <br><a href="https://www.fortinet.com/resources/cyberglossary/public-key-infrastructure ">What Is Public Key Infrastructure (PKI)?</a>
+    <br><a href="https://www.reddit.com/r/sysadmin/comments/6zq3us/sysadmin_guide_to_certificates/">Sysadmin Guide to Certificates</a></p></em>
+  </div>
+  <div id="footer">
+    <p>by Rylan Moro circa 2025. CSS Template sourced from<a href="http://www.free-css.com/">http://www.free-css.com/.</a>Images sourced from Shutterstock.</p>
+  </div>
+  <br>
+</div>
+</body>
+</html>
