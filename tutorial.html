@@ -13,8 +13,35 @@
       <br>
       <h2>Installing Active Directory Certificate Authority & Installing a Web Server Certificate</h2>
       <hr>
+      <br>
+      <p>Below are a series of videos that demonstrate the process of installing the Active Directory Certificate Authority into a domain environment. Before watching, ensure that you are in a domain-enabled environment with administrative access. You should only perform these tasks with permission from the administrator, and this method should only be used on internal webservers- <strong>not</strong> for websites intended for use on the internet!</p>
+      <br>
       <iframe src="https://www.youtube.com/embed/WwK2n-qD9OU" title="Active Directory Certificate Services (1)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/0hpDaA79P0w" title="Active Directory Certificate Services (2)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><iframe src="https://www.youtube.com/embed/_XxnakNECWw" title="Active Directory Certificate Services (3)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <h3>In this video, I demonstrate:</h3>
+      <ul>
+        <li>Installing and configuring Active Directory Certificate Services</li>
+        <li>The Certificate and Certificate Authority snap-ins in the Microsoft Management Console</li>
+        <li>Creating an advanced Certificate Request using the Management Console</li>
+        <li>Signing a Certificate Request using the command line on the CA server</li>
+      </ul>
+      <p>Note that there are always multiple methods to creating and signing certificates. The Custom Certificate Request option in the MMC was used in order to correctly configure Subject Alternative Names for the website's certificate; without this additional configuration, modern web browsers WILL reject the certificate.</p>
+      <hr>
+      <iframe src="https://www.youtube.com/embed/0hpDaA79P0w" title="Active Directory Certificate Services (2)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <h3>In this video I demonstrate:</h3>
+      <ul>
+        <li>Installing a signed certificate using the IIS Management GUI</li>
+        <li>Adding custom HTML content to an IIS website</li>
+        <li>Applying an HTTPS binding and hostname to an IIS website</li>
+        <li>Browsing using HTTPS on the local server</li>
+      </ul>
+      <hr>
+      <iframe src="https://www.youtube.com/embed/_XxnakNECWw" title="Active Directory Certificate Services (3)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <h3>In this video I demonstrate:</h3>
+      <ul>
+        <li>Configuring a DNS record for the website's hostname</li>
+        <li>Distributing the Root CA Certificate using Group Policy</li>
+        <li>How to verify that HTTPS is in use on a modern web browser</li>
+      </ul>
     </div>
   </div>
   <div id="navigation">
